@@ -7,31 +7,58 @@ main() => runApp(new PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp> {
   var _perguntaSelecionada = 0;
-  final List<Map<String, Object>> _perguntas = const [
+  var _pontuacaoTotal = 0;
+  final _perguntas = const [
     {
-      'texto' : 'Qual é a sua cor favorita?',
-      'resposta' : ['Preto','Vermelho','Verde','Branco']
+      'texto': 'Qual é a sua cor favorita?',
+      'respostas': [
+        {'texto': 'Preto', 'pontuacao': 10},
+        {'texto': 'Vermelho', 'pontuacao': 5},
+        {'texto': 'Verde', 'pontuacao': 3},
+        {'texto': 'Branco', 'pontuacao': 1},
+      ],
     },
     {
-      'texto' : 'Qual é o seu animal favorito?',
-      'resposta' : ['Jabuti','Macaco','Gato','Cachorro']
+      'texto': 'Qual é o seu animal favorito?',
+      'respostas': [
+        {'texto': 'Coelho', 'pontuacao': 10},
+        {'texto': 'Cobra', 'pontuacao': 5},
+        {'texto': 'Elefante', 'pontuacao': 3},
+        {'texto': 'Leão', 'pontuacao': 1},
+      ],
     },
     {
-      'texto' : 'Qual seu time de futebol?',
-      'resposta' : ['Flamengo','Palmeiras','Santo','Barcelona']
+      'texto': 'Qual é o seu instrutor favorito?',
+      'respostas': [
+        {'texto': 'Leo', 'pontuacao': 10},
+        {'texto': 'Maria', 'pontuacao': 5},
+        {'texto': 'João', 'pontuacao': 3},
+        {'texto': 'Pedro', 'pontuacao': 1},
+      ],
     }
   ];
 
-  void _responder() {
+  void _responder(int pontuacao) {
     if(temPerguntaSelecionada){
       setState(() {
         _perguntaSelecionada++;
+        _pontuacaoTotal += pontuacao;
+
+        print(_pontuacaoTotal);
       });
+
     }
   }
 
   bool get temPerguntaSelecionada{
     return _perguntaSelecionada < _perguntas?.length;
+  }
+
+  void _reiniciarQuestionario(){
+    setState(() {
+      _perguntaSelecionada = 0;
+      _pontuacaoTotal = 0;
+    });
   }
 
   @override
@@ -47,7 +74,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
                 perguntaSelecionada: _perguntaSelecionada,
                 quandoResponder : _responder
             )
-            : Resultado(),
+            : Resultado(this._pontuacaoTotal, _reiniciarQuestionario),
       ),
     );
   }

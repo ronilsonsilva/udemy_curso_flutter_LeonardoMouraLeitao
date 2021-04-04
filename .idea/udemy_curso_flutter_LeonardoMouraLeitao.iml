@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="GEN_FOLDER_RELATIVE_PATH_APT" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/gen" />
+        <option name="GEN_FOLDER_RELATIVE_PATH_AIDL" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/gen" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/assets" />
+        <option name="LIBS_FOLDER_RELATIVE_PATH" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/libs" />
+        <option name="PROGUARD_LOGS_FOLDER_RELATIVE_PATH" value="/../../udemy_curso_flutter_LeonardoMouraLeitao/proguard_logs" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/src/quiz_pergunta/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/quiz_pergunta/build" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 30 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
